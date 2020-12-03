@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui
+      tier: frontend
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: ui
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+      - name: ui-pods
+        image: tntaksreg.azurecr.io/ui
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ui
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
