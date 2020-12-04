@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: ui-pods
-        image: tntaksreg.azurecr.io/ui
+        image: docker.io/mrganeshkudale/petclinic:ui
         imagePullPolicy: Always
         ports:
           - containerPort: 80
