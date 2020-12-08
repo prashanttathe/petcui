@@ -29,13 +29,14 @@ pipeline {
 				sh "kubectl apply -f ${APP_NAME}/${DEPLOY_ENV}.yml --namespace=${DEPLOY_ENV}"		
 			}
 		}
+	}
 		
-		post { 
-    			success { 
-    		   		echo "Your application URL will be - ${APP_NAME}.e46708b92c054086909b.eastus.aksapp.io"
-    			}
-    			failure { 
-    		    		echo "Please check logs for more details."
-    			}
-    		}
+	post { 
+		success { 
+			echo "Your application URL will be - ${APP_NAME}.e46708b92c054086909b.eastus.aksapp.io"
+		}
+		failure { 
+			echo "Please check logs for more details."
+		}
+	}
 }
