@@ -29,7 +29,7 @@ kind: Service
 metadata:
   name: ui-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: ui
     tier: frontend
