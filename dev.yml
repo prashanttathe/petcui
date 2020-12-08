@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ui-pods
-        image: nginx
+        image: tntaksreg.azurecr.io/ui
 ---
 apiVersion: v1
 kind: Service
