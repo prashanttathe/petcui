@@ -1,5 +1,3 @@
-import {MetricsComponent} from './metrics/metrics.component';
-import {MetricsModule} from './metrics/metrics.module';
 /*
  *
  *  * Copyright 2016-2017 the original author or authors.
@@ -37,13 +35,11 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MetricsComponent} from './metrics/metrics.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MetricsComponent
   ],
   imports: [
     BrowserModule,
