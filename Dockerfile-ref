@@ -1,6 +1,0 @@
-FROM nginx:1.17.9-alpine
-RUN rm -rf /usr/share/nginx/html/*
-COPY . /usr/share/nginx/html
-RUN if test -f /usr/share/nginx/html/src/assets/config/configLoader.sh; then echo "/usr/share/nginx/html/src/assets/config/configLoader.sh && nginx -g 'daemon off;' " > /usr/share/nginx/command.sh && chmod +x /usr/share/nginx/html/assets/config/configLoader.sh /usr/share/nginx/command.sh ;       else echo "nginx -g 'daemon off;' " > /usr/share/nginx/command.sh && chmod +x /usr/share/nginx/command.sh ; fi
-CMD /usr/share/nginx/command.sh
-ENTRYPOINT ["/usr/share/nginx/html/"]
