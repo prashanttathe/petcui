@@ -23,5 +23,5 @@
 
 export const environment = {
   production: false,
-  REST_API_URL: 'http://http://api.e46708b92c054086909b.eastus.aksapp.io/'
+  REST_API_URL: 'http://api.e46708b92c054086909b.eastus.aksapp.io/'
 };
