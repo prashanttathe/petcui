@@ -15,7 +15,7 @@ spec:
         app: ui
     spec:
       containers:
-      - name: pods-ui
+      - name: pods-ui-deployment
         image: tntaksreg.azurecr.io/ui
         imagePullPolicy: Always
 ---
