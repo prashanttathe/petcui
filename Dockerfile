@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
+RUN npm install -g @angular/cli@latest
 RUN ng serve --prod
 
 FROM nginx:1.17.1-alpine
