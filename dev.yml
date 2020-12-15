@@ -7,15 +7,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: ui-deployment
+      app: ui
   replicas: 2
   template:
     metadata:
       labels:
-        app: ui-deployment
+        app: ui
     spec:
       containers:
-      - name: pods-ui-deployment
+      - name: pods-ui
         image: tntaksreg.azurecr.io/ui
         imagePullPolicy: Always
 ---
@@ -26,7 +26,7 @@ metadata:
     namespace: dev
 spec:
   selector:
-    app: ui-deployment
+    app: ui
   type: ClusterIP
   ports:
     - protocol: TCP
