@@ -2,31 +2,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui-deployment
+  name: petclinic-ui-deployment
   namespace: dev
 spec:
   selector:
     matchLabels:
-      app: ui
+      app: petclinic-ui
   replicas: 2
   template:
     metadata:
       labels:
-        app: ui
+        app: petclinic-ui
     spec:
       containers:
-      - name: pods-ui-deployment
-        image: tntaksreg.azurecr.io/ui
+      - name: pods-petclinic-ui-deployment
+        image: tntaksreg.azurecr.io/petclinic-ui
         imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: ui-service
+    name: petclinic-ui-service
     namespace: dev
 spec:
   selector:
-    app: ui
+    app: petclinic-ui
   type: ClusterIP
   ports:
     - protocol: TCP
@@ -35,7 +35,7 @@ spec:
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: ui-ingress
+  name: petclinic-ui-ingress
   namespace: dev
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
@@ -45,6 +45,6 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: ui-service
+          serviceName: petclinic-ui-service
           servicePort: 9966
         path: /
