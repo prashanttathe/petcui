@@ -46,5 +46,5 @@ spec:
       paths:
       - backend:
           serviceName: ui-service
-          servicePort: 8080
+          servicePort: 9966
         path: /
