@@ -23,5 +23,6 @@
 
 export const environment = {
   production: false,
-  REST_API_URL: 'http://petclinicapi.e46708b92c054086909b.eastus.aksapp.io/petclinic/api/'
+ // REST_API_URL: 'http://localhost:9966/petclinic/api/'
+ REST_API_URL: 'http://petclinicapi.e46708b92c054086909b.eastus.aksapp.io/petclinic/api/'
 };
