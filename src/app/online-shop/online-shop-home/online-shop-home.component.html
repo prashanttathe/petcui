@@ -1,347 +1,81 @@
 <!--For Page-->
 <div class="page">
-  <h1><strong><a class="page-title">Foods </a></strong></h1> <!-- Card Description-->
+  <h1><strong><a class="page-title">Foods / Treats</a></strong></h1> <!-- Card Description-->
 
   <!--For Row containing all card-->
   <div class="row">
       <!--Card 1-->
-      <div class="col-sm">
-          <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
+      <div class="col-sm-6" *ngFor="let boat of product1; let i =index" >
+          <div class="card card-cascade card-ecommerce wider shadow mb-5">
               <!--Card image-->
-              <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg" alt=""> <a>
+              <div class="view view-cascade overlay text-center"> <img id="img-1" class="card-img-top" [src]="boat.image" alt="" width="200" height="250"> <a>
                       <div class="mask rgba-white-slight"></div>
                   </a> </div>
               <!--Card Body-->
               <div class="card-body card-body-cascade text-center">
                   <!--Card Title-->
-                  <h4 class="card-title"><strong><a href="">Kennel Kitchen </a></strong></h4> <!-- Card Description-->
+                  <h4  id="title1" class="card-title"><strong><a href="">{{boat.name}} </a></strong></h4> <!-- Card Description-->
                   <!-- <p class="card-text">Kennel Kitchen Supreme Cuts in Gravy, Chicken Liver with Pumpkin, 100g (Pack of 12). Wet Dog Food for Adult and Puppy </p> -->
-                  <p class="price">€635.00</p> <!-- Card Rating-->
-                  <ul class="row rating">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                  </ul>
+                  <p  id="amount1" class="price">€{{boat.amount}}</p> <!-- Card Rating-->
+                 
                   <!--Card footer-->
                   <div style="display: flex;">
                     <div style="width: 125px;">
-                    <label for="cars">Quantity:</label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="mercedes">3</option>
-                      <option value="audi">4</option>
-                      <option value="audi">5</option>
-
+                    <label id="lbl1" for="cars">Quantity:</label>
+                    <!-- <select name="cars" id="cars" (change)="myFunction($event)">
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="opel">Opel</option>
+                      <option value="audi">Audi</option>
+                    </select> -->
+                    <select (change)="myFunction($event)" >
+                      <option *ngFor="let c of quantity" [ngValue]="c.id">{{c.id}}</option>
                     </select>
                   </div>
                   <div style="width: 125px;">
-                    <button class="btn-add">ADD TO CART</button>
+                    <button id="btn-1" class="btn-add" (click)="addtoCart(boat)">ADD TO CART</button>
                   </div>
                   </div>
               </div>
           </div>
-      </div>
-      <!--Card 2-->
-      <div class="col-sm">
-          <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-              <!--Card image-->
-              <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg"  alt=""> <a>
-                      <div class="mask rgba-white-slight"></div>
-                  </a> </div>
-              <!--Card Body-->
-              <div class="card-body card-body-cascade text-center">
-                  <!--Card Title-->
-                  <h4 class="card-title"><strong><a href="">Velcote Liquid</a></strong></h4>
-                  <!--Card Description-->
-                  <!-- <p class="card-text">Velcote Liquid for Healthy Skin, Shiny and Lustrous Coat for Dogs,Puppies, Cats and Kittens, 250ml </p> -->
-                  <p class="price">€318.00 </p> <!-- Card Rating-->
-                  <ul class="row rating">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                  </ul>
-                  <!--Card footer-->
-                  <div style="display: flex;">
-                    <div style="width: 125px;">
-                    <label for="cars">Quantity:</label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="mercedes">3</option>
-                      <option value="audi">4</option>
-                      <option value="audi">5</option>
+      </div><br>
+      
+  </div>
+  </div>
+  <div class="page">
+  <div class="row">
+  <div style="display: fl;" class="col-sm-6" *ngFor="let boat of product2; let i =index" >
+    <div  class="card card-cascade card-ecommerce wider shadow mb-5">
+        <!--Card image-->
+        <div class="view view-cascade overlay text-center"> <img id="img-2" class="card-img-top" [src]="boat.image" alt="" width="200" height="250"> <a>
+                <div class="mask rgba-white-slight"></div>
+            </a> </div>
+        <!--Card Body-->
+        <div class="card-body card-body-cascade text-center">
+            <!--Card Title-->
+            <h4 id="title2" class="card-title"><strong><a href="">{{boat.name}} </a></strong></h4> <!-- Card Description-->
+            <!-- <p class="card-text">Kennel Kitchen Supreme Cuts in Gravy, Chicken Liver with Pumpkin, 100g (Pack of 12). Wet Dog Food for Adult and Puppy </p> -->
+            <p  id="amount2"  class="price">€{{boat.amount}}</p> <!-- Card Rating-->
+          
+            <!--Card footer-->
+            <div style="display: flex;">
+              <div style="width: 125px;">
+              <label id="lbl2" for="cars">Quantity:</label>
+              <select name="cars" id="cars">
+                <option value="volvo">1</option>
+                <option value="saab">2</option>
+                <option value="mercedes">3</option>
+                <option value="audi">4</option>
+                <option value="audi">5</option>
 
-                    </select>
-                  </div>
-                  <div style="width: 125px;">
-                    <button class="btn-add">ADD TO CART</button>
-                  </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!--Card 3-->
-      <div class="col-sm">
-          <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-              <!--Card image-->
-              <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg" alt=""> <a>
-                      <div class="mask rgba-white-slight"></div>
-                  </a> </div>
-              <!--Card Body-->
-              <div class="card-body card-body-cascade text-center">
-                  <!--Card Title-->
-                  <h4 class="card-title"><strong><a href="">Pedigree PRO</a></strong></h4>
-                  <!--Description-->
-                  <!-- <p class="card-text">Pedigree PRO Expert Nutrition Large Breed Puppy (3-18 Months), Dry Dog Food, 3kg Pack </p> -->
-                  <p class="price">€923.00</p> <!-- Card Rating-->
-                  <ul class="row rating">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                  </ul>
-                  <!--Card footer-->
-                  <div style="display: flex;">
-                    <div style="width: 125px;">
-                    <label for="cars">Quantity:</label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="mercedes">3</option>
-                      <option value="audi">4</option>
-                      <option value="audi">5</option>
-
-                    </select>
-                  </div>
-                  <div style="width: 125px;">
-                    <button class="btn-add">ADD TO CART</button>
-                  </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-       <!--Card 4-->
-       <div class="col-sm">
-        <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <!--Card image-->
-            <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg"  alt=""> <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a> </div>
-            <!--Card Body-->
-            <div class="card-body card-body-cascade text-center">
-                <!--Card Title-->
-                <h4 class="card-title"><strong><a href="">Velcote Liquid</a></strong></h4>
-                <!--Card Description-->
-                <!-- <p class="card-text">Velcote Liquid for Healthy Skin, Shiny and Lustrous Coat for Dogs,Puppies, Cats and Kittens, 250ml </p> -->
-                <p class="price">€318.00 </p> <!-- Card Rating-->
-                <ul class="row rating">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                </ul>
-                <!--Card footer-->
-                <div style="display: flex;">
-                  <div style="width: 125px;">
-                  <label for="cars">Quantity:</label>
-                  <select name="cars" id="cars">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="mercedes">3</option>
-                    <option value="audi">4</option>
-                    <option value="audi">5</option>
-
-                  </select>
-                </div>
-                <div style="width: 125px;">
-                  <button class="btn-add">ADD TO CART</button>
-                </div>
-                </div>
+              </select>
+            </div>
+            <div style="width: 125px;">
+              <button id="btn-2" class="btn-add" (click)="addtoCart(boat)">ADD TO CART</button>
+            </div>
             </div>
         </div>
     </div>
-     <!--Card 5-->
-     
-  </div>
 </div>
-<!------------------>
-<!--For Page-->
-<div class="page">
-  <h1><strong><a class="page-title">Treats </a></strong></h1> <!-- Card Description-->
-
-  <!--For Row containing all card-->
-  <div class="row">
-      <!--Card 1-->
-      <div class="col-sm">
-          <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-              <!--Card image-->
-              <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg" alt=""> <a>
-                      <div class="mask rgba-white-slight"></div>
-                  </a> </div>
-              <!--Card Body-->
-              <div class="card-body card-body-cascade text-center">
-                  <!--Card Title-->
-                  <h4 class="card-title"><strong><a href="">Kennel Kitchen </a></strong></h4> <!-- Card Description-->
-                  <!-- <p class="card-text">Kennel Kitchen Supreme Cuts in Gravy, Chicken Liver with Pumpkin, 100g (Pack of 12). Wet Dog Food for Adult and Puppy </p> -->
-                  <p class="price">€635.00</p> <!-- Card Rating-->
-                  <ul class="row rating">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                  </ul>
-                  <!--Card footer-->
-                  <div style="display: flex;">
-                    <div style="width: 125px;">
-                    <label for="cars">Quantity:</label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="mercedes">3</option>
-                      <option value="audi">4</option>
-                      <option value="audi">5</option>
-
-                    </select>
-                  </div>
-                  <div style="width: 125px;">
-                    <button class="btn-add">ADD TO CART</button>
-                  </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!--Card 2-->
-      <div class="col-sm">
-          <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-              <!--Card image-->
-              <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg"  alt=""> <a>
-                      <div class="mask rgba-white-slight"></div>
-                  </a> </div>
-              <!--Card Body-->
-              <div class="card-body card-body-cascade text-center">
-                  <!--Card Title-->
-                  <h4 class="card-title"><strong><a href="">Velcote Liquid</a></strong></h4>
-                  <!--Card Description-->
-                  <!-- <p class="card-text">Velcote Liquid for Healthy Skin, Shiny and Lustrous Coat for Dogs,Puppies, Cats and Kittens, 250ml </p> -->
-                  <p class="price">€318.00 </p> <!-- Card Rating-->
-                  <ul class="row rating">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                  </ul>
-                  <!--Card footer-->
-                  <div style="display: flex;">
-                    <div style="width: 125px;">
-                    <label for="cars">Quantity:</label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="mercedes">3</option>
-                      <option value="audi">4</option>
-                      <option value="audi">5</option>
-
-                    </select>
-                  </div>
-                  <div style="width: 125px;">
-                    <button class="btn-add">ADD TO CART</button>
-                  </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!--Card 3-->
-      <div class="col-sm">
-          <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-              <!--Card image-->
-              <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg" alt=""> <a>
-                      <div class="mask rgba-white-slight"></div>
-                  </a> </div>
-              <!--Card Body-->
-              <div class="card-body card-body-cascade text-center">
-                  <!--Card Title-->
-                  <h4 class="card-title"><strong><a href="">Pedigree PRO</a></strong></h4>
-                  <!--Description-->
-                  <!-- <p class="card-text">Pedigree PRO Expert Nutrition Large Breed Puppy (3-18 Months), Dry Dog Food, 3kg Pack </p> -->
-                  <p class="price">€923.00</p> <!-- Card Rating-->
-                  <ul class="row rating">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                  </ul>
-                  <!--Card footer-->
-                  <div style="display: flex;">
-                    <div style="width: 125px;">
-                    <label for="cars">Quantity:</label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="mercedes">3</option>
-                      <option value="audi">4</option>
-                      <option value="audi">5</option>
-
-                    </select>
-                  </div>
-                  <div style="width: 125px;">
-                    <button class="btn-add">ADD TO CART</button>
-                  </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-       <!--Card 4-->
-       <div class="col-sm">
-        <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <!--Card image-->
-            <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../../../assets/images/tonic.jpg"  alt=""> <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a> </div>
-            <!--Card Body-->
-            <div class="card-body card-body-cascade text-center">
-                <!--Card Title-->
-                <h4 class="card-title"><strong><a href="">Velcote Liquid</a></strong></h4>
-                <!--Card Description-->
-                <!-- <p class="card-text">Velcote Liquid for Healthy Skin, Shiny and Lustrous Coat for Dogs,Puppies, Cats and Kittens, 250ml </p> -->
-                <p class="price">€318.00 </p> <!-- Card Rating-->
-                <ul class="row rating">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                </ul>
-                <!--Card footer-->
-                <div style="display: flex;">
-                  <div style="width: 125px;">
-                  <label for="cars">Quantity:</label>
-                  <select name="cars" id="cars">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="mercedes">3</option>
-                    <option value="audi">4</option>
-                    <option value="audi">5</option>
-
-                  </select>
-                </div>
-                <div style="width: 125px;">
-                  <button class="btn-add">ADD TO CART</button>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     <!--Card 5-->
-     
-  </div>
+</div>
 </div>
