@@ -19,7 +19,6 @@
 /**
  * @author Vitaliy Fedoriv
  */
-
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -34,10 +33,11 @@ import {VetsModule} from './vets/vets.module';
 import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {OnlineShopModule} from './online-shop/online-shop.module';
-
+import { CartModule } from './cart/cart.module';
 
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -49,6 +49,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     OwnersModule,
+    CartModule,
     PetsModule,
     VisitsModule,
     PetTypesModule,
