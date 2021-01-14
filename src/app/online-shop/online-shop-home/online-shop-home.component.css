@@ -1,0 +1,66 @@
+ul {
+    list-style-type: none;
+    margin-left: 37%;
+    padding: 0
+}
+.row{
+    display: flex;
+    margin: 2%;
+}
+.rating {
+    margin-left: 37%
+}
+
+.page {
+    background-color: white;
+    padding: 2%;
+    margin: auto
+}
+.btn-add{
+    background-color: gold;
+    border-radius: 4px;
+    width: 100%;
+}
+.fa {
+    color: #f2dd1d
+}
+
+.card-img-top {
+    width: 90%;
+    height: 225px
+}
+
+.view {
+    background-color: white;
+    padding: 10px;
+    margin: 20px
+}
+
+.card {
+    width: 95%;
+    padding: 10px;
+    margin-left: 2%;
+    background: white;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.card-footer {
+    display: flex;
+    background-color: #ff772e;
+    font-weight: 700
+}
+
+.price {
+    color: #ff4517;
+    font-weight: 600
+}
+.page-title{
+    color:black;
+}
+#cars{
+    padding: 3px;
+    width: 40px;
+}
+h1{
+    margin-left: 2%;
+}
