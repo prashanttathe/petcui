@@ -4,10 +4,12 @@
 }
 
 .order-summary {
-  margin-top: 4%;
+  width: 400px;
   background-color: lightgray;
   border: 1px solid grey;
   height: 131%;
+  margin-top: 22px;
+
 }
 
 .btn-primary {
