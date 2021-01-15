@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -25,7 +26,7 @@ export class ShoppingCartComponent implements OnInit {
   quantityCount: any;
   totalAmount: any;
   ShowFlag: boolean;
-  constructor( private cartService: CartService) { }
+  constructor( private cartService: CartService,private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.orderSummary();
@@ -121,5 +122,8 @@ export class ShoppingCartComponent implements OnInit {
       console.log("abc",res)
     });
     this.orderSummary();
+  }
+  continueShopping(){
+    this.router.navigate([`../onlineShop`]);
   }
 }
